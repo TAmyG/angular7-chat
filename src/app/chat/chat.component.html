@@ -36,6 +36,8 @@
   </div>
 
   <div
+    #scrollChat
+    [scrollTop]="scrollChat.scrollHeight"
     class="card-body"
     style="overflow-y:scroll; height: 360px;"
     *ngIf="conectado"
@@ -73,6 +75,7 @@
           placeholder="Escribe un mensaje..."
           name="texto"
           [(ngModel)]="mensaje.texto"
+          (keyup)="escribiendoEvento()"
         />
       </div>
 
@@ -80,5 +83,6 @@
         Enviar
       </button>
     </form>
+    <div>{{ escribiendo }}</div>
   </div>
 </div>
